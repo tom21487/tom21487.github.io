@@ -12,5 +12,12 @@ body a {
 .project a {
     border: black solid 1px;
     border-radius: 5px;
-    padding: 5px; background-color: lightblue;
+    padding: 5px;
+    background-color: lightblue;
+}
+.project img {
+    width: 80%;
+    max-width: 1000px;
+    border: black solid 1px;
+    border-radius: 5px;
 }
