@@ -17,8 +17,8 @@ body a {
     background-color: lightblue;
 }
 .project img {
-    width: 80%;
-    max-width: 1000px;
+    width: 100%;
+    /*max-width: 1000px;*/
     border: black solid 1px;
     border-radius: 5px;
 }
