@@ -7,14 +7,22 @@ body a {
     color: black;
     text-decoration: none;
 }
+
+
 .project {
     margin-top: 50px;
 }
-.project a {
+.project .btn {
     border: black solid 1px;
     border-radius: 5px;
     padding: 5px;
     background-color: lightblue;
+}
+.project .date {
+    margin-left: 20px;
+}
+.project .src {
+    color: blue;
 }
 .project img {
     width: 100%;
@@ -22,3 +30,4 @@ body a {
     border: black solid 1px;
     border-radius: 5px;
 }
+
