@@ -7,3 +7,7 @@
 auto-save-list
 tramp
 .\#* 
+
+# Valgrind
+creator/vgcore*
+creator/creator

@@ -1,0 +1,10 @@
+{
+    "title_en": "Youdao smart lamp",
+    "title_cn": "有道智能学习灯",
+    "date": {
+        "year": 2021,
+        "month": 7
+    },
+    "desc_en": "When I interned at Netease Youdao, I wrote gesture recognition algorithms for the smart lamp. I believe in improving education through technology.",
+    "desc_cn": "我在有网易道公司实习时为智能学习灯写了些手势识别算法。我相信智能设备会提高教学体验，希望该产品能使学习更加有趣和高效。"
+}
