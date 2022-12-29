@@ -1,0 +1,11 @@
+{
+    "title_en": "Projector piano",
+    "title_cn": "投影仪钢琴",
+    "date": {
+        "year": 2022,
+        "month": 12
+    },
+    "desc_en": "This is my team's final project for UMich EECS373. It is a digital instrument that consists of a projector. The device can project piano keys onto any surface. When a key is pressed, a sound is played. The two largest modules in this project were the LIDAR scanner and the VGA controller. Technologies we used included: serial communication (UART, I2C), C programming, FPGA digital circuit design (Verilog) and soldering etc.",
+    "desc_cn": "我与团队在密大EECS373课程中的期末项目。这是一个包含投影仪的电子乐器。它可以将钢琴按键投射到任何平面上。触碰虚拟按键则会出声。该项目中的两大模块为激光扫描仪和VGA显示控制器。我们用到的技术包括：串联通信协议（UART、I2C）、C语言编成、FPGA数字电路设计（Verilog）和焊接等。",
+    "link": "https://www.eecs.umich.edu/courses/eecs373/overview.html"
+}

@@ -1,0 +1,11 @@
+{
+    "title_en": "RISC-V CPU on FPGA",
+    "title_cn": "基于FPGA的RISC-V处理器",
+    "date": {
+        "year": 2022,
+        "month": 12
+    },
+    "desc_en": "I have completed DigiKey's Introduction to FPGA course, which culminated in running the FemtoRV RISC-V CPU on my Lattice IceStick FPGA.",
+    "desc_cn": "我完成了德捷电子的FPGA入门课程，最终将一款基于RISC-V架构的处理器（FemtoRV）在我的Lattice IceStick FPGA板上实现。",
+    "link": "https://www.digikey.com/en/maker/projects/introduction-to-fpga-part-11-risc-v-softcore-processor/f0511ddb538f444cae08f7bc43a74dcc"
+}
