@@ -1,0 +1,11 @@
+{
+    "title_en": "Emacs configuration file",
+    "title_cn": "Emacs配置文件",
+    "date": {
+        "year": 2022,
+        "month": 11
+    },
+    "desc_en": "It is time I share my config. Reasons I like emacs: 1) customizable, 2) self-documenting.",
+    "desc_cn": "想和大家分享一下我的emacs配置。很多人经常问我：“你为什么会用如此古老的编辑器？多不方便啊。“其实我也没有一个完整的答案，也许是因为习惯，也许是为了情怀。用完emacs之后我才真正了解什么叫做自由软件－把所有的选择留给用户。 ",
+    "link": "https://github.com/tom21487/config"
+}

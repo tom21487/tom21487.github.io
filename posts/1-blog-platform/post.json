@@ -6,5 +6,6 @@
         "month": 8
     },
     "desc_en": "A platform for creating online blogs.",
-    "desc_cn": "一个创建网络博客的平台。"
+    "desc_cn": "一个创建网络博客的平台。",
+    "link": "https://github.com/tom21487/blog-system"
 }

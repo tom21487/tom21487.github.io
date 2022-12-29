@@ -1,0 +1,11 @@
+{
+    "title_en": "Gate-level CPU Core",
+    "title_cn": "门级处理器内核",
+    "date": {
+        "year": 2022,
+        "month": 9
+    },
+    "desc_en": "4-bit CPU core using only wires and logic gates.",
+    "desc_cn": "仅使用电线和逻辑门设计的4位处理器核心。",
+    "link": "https://github.com/tom21487/4-bit-cpu"
+}

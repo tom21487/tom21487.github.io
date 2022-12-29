@@ -53,15 +53,16 @@ int main() {
     cJSON *home_root = cJSON_Parse(home_file_str);
     cJSON *home_title[2] = { cJSON_GetObjectItem(home_root, "title_en"), cJSON_GetObjectItem(home_root, "title_cn") };
     cJSON *home_about[2] = { cJSON_GetObjectItem(home_root, "about_en"), cJSON_GetObjectItem(home_root, "about_cn") };
-    cJSON *home_interests[2] = { cJSON_GetObjectItem(home_root, "interests_en"), cJSON_GetObjectItem(home_root, "interests_cn") };
+    cJSON *home_interests_heading[2] = { cJSON_GetObjectItem(home_root, "interests_heading_en"), cJSON_GetObjectItem(home_root, "interests_heading_cn") };
+    cJSON *home_interests_content[2] = { cJSON_GetObjectItem(home_root, "interests_content_en"), cJSON_GetObjectItem(home_root, "interests_content_cn") };
     cJSON *home_mail[2] = { cJSON_GetObjectItem(home_root, "mail_en"), cJSON_GetObjectItem(home_root, "mail_cn") };
     cJSON *home_projects[2] = { cJSON_GetObjectItem(home_root, "projects_en"), cJSON_GetObjectItem(home_root, "projects_cn") };
     for (int lang = 0; lang < 2; lang++) {
-        char out_file_str[8];
+        char out_file_str[11];
         if (lang == EN) {
-            strcpy(out_file_str, "en.html");
+            strcpy(out_file_str, "../en.html");
         } else {
-            strcpy(out_file_str, "cn.html");
+            strcpy(out_file_str, "../cn.html");
         }        
         FILE *out_fp;
         out_fp = fopen(out_file_str, "w");
@@ -76,23 +77,27 @@ int main() {
         fprintf(out_fp, "        <link rel=\"stylesheet\" href=\"style.css\">\n");
         fprintf(out_fp, "    </head>\n");
         fprintf(out_fp, "    <body>\n");
-        fprintf(out_fp, "    <h1>Tom Jiao - tom21487.github.io</h1>\n");
+        fprintf(out_fp, "        <center>\n");
+        fprintf(out_fp, "            <h1>Tom Jiao - tom21487.github.io</h1>\n");
         write_lang_panel(out_fp, lang);
-        fprintf(out_fp, "    <p>\n");
-        fprintf(out_fp, "        %s\n", home_about[lang]->valuestring);
-        fprintf(out_fp, "    </p>\n");
-        fprintf(out_fp, "    <p>\n");
-        fprintf(out_fp, "        %s\n", home_interests[lang]->valuestring);
-        fprintf(out_fp, "        <br>\n");
-        fprintf(out_fp, "        %stomjiao@umich.edu\n", home_mail[lang]->valuestring);
-        fprintf(out_fp, "    </p>\n");
-        fprintf(out_fp, "    <p>\n");
-        fprintf(out_fp, "        %s\n", home_projects[lang]->valuestring);
-        fprintf(out_fp, "    </p>\n");
+        fprintf(out_fp, "            <p>\n");
+        fprintf(out_fp, "                %s\n", home_about[lang]->valuestring);
+        fprintf(out_fp, "            </p>\n");
+        fprintf(out_fp, "            <p>\n");
+        fprintf(out_fp, "                <strong>%s</strong>%s\n", home_interests_heading[lang]->valuestring, home_interests_content[lang]->valuestring);
+        fprintf(out_fp, "                <br>\n");
+        fprintf(out_fp, "                <strong>%s</strong>tomjiao@umich.edu\n", home_mail[lang]->valuestring);
+        fprintf(out_fp, "            </p>\n");
+        fprintf(out_fp, "            <p>\n");
+        fprintf(out_fp, "                %s\n", home_projects[lang]->valuestring);
+        fprintf(out_fp, "            </p>\n");
         for (int i = MAX_NUM_POSTS-post_idx; i < MAX_NUM_POSTS; i++) {
-            char post_path[19+MAX_POST_NAME_LEN] = "../posts/";
+            char post_path[9+MAX_POST_NAME_LEN+10+1] = "../posts/";
             strcat(post_path, post_names[i]);
             strcat(post_path, "/post.json");
+            char image_path[6+MAX_POST_NAME_LEN+10+1] = "posts/";
+            strcat(image_path, post_names[i]);
+            strcat(image_path, "/image.png");
             char post_file_str[MAX_NUM_CHARS];
             file_to_str(post_path, post_file_str);
             cJSON *post_root = cJSON_Parse(post_file_str); //解析成json形式
@@ -101,25 +106,32 @@ int main() {
             cJSON *post_date_year = cJSON_GetObjectItem(post_date, "year");
             cJSON *post_date_month = cJSON_GetObjectItem(post_date, "month");
             cJSON *post_desc[2] = { cJSON_GetObjectItem(post_root, "desc_en"), cJSON_GetObjectItem(post_root, "desc_cn") }; //获取键值内容
+            cJSON *post_link = cJSON_GetObjectItem(post_root, "link");
             // 英文文件
-            char year_string[5];
-            sprintf(year_string, "%d", post_date_year->valueint);
-            fprintf(out_fp, "    <div class=\"project\">\n");
-            fprintf(out_fp, "        <h2>\n");
-            fprintf(out_fp, "            <a class=\"btn\" href=\"\" target=\"_blank\" rel=\"noopener noreferrer\">\n");
-            fprintf(out_fp, "                %s\n", post_title[lang]->valuestring);
-            fprintf(out_fp, "            </a>\n");
-            fprintf(out_fp, "            <span class=\"date\">\n");
-            fprintf(out_fp, "                 %s %s\n", num_to_month[post_date_month->valueint], year_string);
-            fprintf(out_fp, "            </span>\n");
-            fprintf(out_fp, "        </h2>\n");
-            fprintf(out_fp, "        <p>\n");
-            fprintf(out_fp, "            %s\n", post_desc[lang]->valuestring);
-            fprintf(out_fp, "        </p>\n");
-            fprintf(out_fp, "        <img src=\"image.png\" alt=\"project%d\">\n", i-(MAX_NUM_POSTS-post_idx));
-            fprintf(out_fp, "    </div>\n");
+            fprintf(out_fp, "            <div class=\"project\">\n");
+            fprintf(out_fp, "                <h2>\n");
+            fprintf(out_fp, "                    <a class=\"btn\" href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">\n", post_link->valuestring);
+            fprintf(out_fp, "                        %s\n", post_title[lang]->valuestring);
+            fprintf(out_fp, "                    </a>\n");
+            fprintf(out_fp, "                    <span class=\"date\">\n");
+            if (lang == EN) {
+                char year_string[5];
+                sprintf(year_string, "%d", post_date_year->valueint);
+                fprintf(out_fp, "                         %s %s\n", num_to_month[post_date_month->valueint], year_string);
+            } else {
+                fprintf(out_fp, "                         %d年%d月\n", post_date_year->valueint, post_date_month->valueint);
+            }
+            fprintf(out_fp, "                    </span>\n");
+            fprintf(out_fp, "                </h2>\n");
+            fprintf(out_fp, "                <p>\n");
+            fprintf(out_fp, "                    %s\n", post_desc[lang]->valuestring);
+            fprintf(out_fp, "                </p>\n");
+            //fprintf(out_fp, "                <img src=\"%s\" alt=\"project%d\">\n", image_path, i-(MAX_NUM_POSTS-post_idx));
+            fprintf(out_fp, "                <img src=\"%s\" alt=\"project%d\">\n", image_path, MAX_NUM_POSTS-i-1);
+            fprintf(out_fp, "            </div>\n");
             cJSON_Delete(post_root);
         }
+        fprintf(out_fp, "        </center>\n");
         fprintf(out_fp, "    </body>\n");
         fprintf(out_fp, "</html>\n");
         if (fclose(out_fp) == EOF) {
@@ -131,24 +143,30 @@ int main() {
 }
 
 void write_lang_panel(FILE *const out_fp, int lang) {
-    fprintf(out_fp, "    <p>\n");
-    fprintf(out_fp, "        ");
+    fprintf(out_fp, "            <p>\n");
+    fprintf(out_fp, "                ");
     open_panel(out_fp, lang, EN);
     fprintf(out_fp, "En");
     close_panel(out_fp, lang, EN);
     fprintf(out_fp, " | ");
     open_panel(out_fp, lang, CN);
-    fprintf(out_fp, "Cn");
+    fprintf(out_fp, "中");
     close_panel(out_fp, lang, CN);
     fprintf(out_fp, "\n");
-    fprintf(out_fp, "    </p>\n");
+    fprintf(out_fp, "            </p>\n");
 }
 
 void open_panel(FILE *const out_fp, int lang, int choice) {
     if (lang == choice) {
         fprintf(out_fp, "<strong>");
     } else {
-        fprintf(out_fp, "<a href=\"en.html\" rel=\"noopener noreferrer\">");
+        fprintf(out_fp, "<a href=\"");
+        if (lang == EN) {
+            fprintf(out_fp, "cn");
+        } else {
+            fprintf(out_fp, "en");
+        }
+        fprintf(out_fp, ".html\" rel=\"noopener noreferrer\">");
     }
 }
 
