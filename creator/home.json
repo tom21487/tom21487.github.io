@@ -6,10 +6,10 @@
     "about_cn": "欢迎来到我的个人网站。我是密歇根大学工程学院的一名本科生。我主修计算机科学，辅修电子工程。",
     "interests_heading_en": "Interests: ",
     "interests_heading_cn": "兴趣方向：",
-    "interests_content_en": "computer architecture, programs/circuits connection, Linux and text editors",
-    "interests_content_cn": "计算机体系结构、电路与程序的结合、Linux系统和文本编辑器",
+    "interests_content_en": "Computer Architecture, Digital Verification, Embedded Systems, Linux, Text Editors",
+    "interests_content_cn": "计算机体系结构、芯片验证、Linux操作系统、文本编辑器",
     "mail_en": "Email: ",
     "mail_cn": "电子邮箱：",
     "projects_en": "Below is a list of some of my personal projects. I hope to post more.",
-    "projects_cn": "以下是我的一些个人项目。"
+    "projects_cn": "以下是我的一些个人项目，希望以后能够分享更多。"
 }

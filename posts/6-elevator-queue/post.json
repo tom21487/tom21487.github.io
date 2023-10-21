@@ -1,0 +1,11 @@
+{
+    "title_en": "Verilog Elevator Queue",
+    "title_cn": "Verilog电梯队列",
+    "date": {
+        "year": 2023,
+        "month": 10
+    },
+    "desc_en": "Elevator-inspired queue-like data structure implemented in Verilog.",
+    "desc_cn": "用Verilog硬件描述语言实现的类队列数据结构。",
+    "link": "https://github.com/tom21487/elevator-queue"
+}
