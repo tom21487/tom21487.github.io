@@ -1,11 +1,41 @@
-<!-- 首页重导向 -->
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <title>Tom's personal website</title>
-        <script>window.location.replace("en.html");</script>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <a class="heading bubble" href="index.html">
+            <h1>Tom Jiao - tom21487.github.io</h1>
+        </a>
+        <h2>Main page / 首页</h2>
+        <div class="la-div">
+            <p> Welcome to my website. This is a collection of personal projects. My goal is to explore computer engineering and related topics in an easily understandable way. </p>
+            <p> 欢迎访问我的网站。这里收藏了我的一些个人项目。我的目标是以通俗易懂的方式探索计算机工程等概念。</p>
+        </div>
+        <div> <!-- Category blocks section -->
+            <a class="category bubble" href="software.html">
+                <h2>Software / 软件</h2>
+                <div class="la-div">
+                    <p> Tools, Linux, text editors, etc. </p>
+                    <p> 工具、Linux、文本编辑器等 </p>
+                </div>
+            </a>
+            <a class="category bubble" href="hardware/index.html">
+                <h2>Hardware / 硬件</h2>
+                <div class="la-div">
+                    <p> Chip design, embedded systems, circuits, etc. </p>
+                    <p> 芯片设计、嵌入式系统、电路等 </p>
+                </div>
+            </a>
+            <a class="category bubble" href="mathematics.html">
+                <h2>Mathematics / 数学</h2>
+                <div class="la-div">
+                    <p> Linear algebra, proofs, etc. </p>
+                    <p> 线性代数、证明等 </p>
+                </div>
+            </a>
+        </div>
     </body>
 </html>

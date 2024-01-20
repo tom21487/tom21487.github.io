@@ -4,30 +4,43 @@ body {
     background-color: #fbf8ef;
     margin-left: 80px;
     margin-right: 80px;
+    text-align: center;
 }
 body a {
     color: black;
     text-decoration: none;
 }
 
-
-.project {
-    margin-top: 50px;
-}
-.project .btn {
+.bubble {    
+    display: inline-block;
     border: black solid 1px;
     border-radius: 5px;
-    padding: 5px;
     background-color: lightblue;
-}
-.project .date {
-    margin-left: 20px;
-}
-.project .src {
-    color: blue;
-}
-.project img {
-    border: black solid 1px;
-    border-radius: 5px;
+    /*padding: 5px;*/
 }
 
+.heading {
+    width: 600px;
+}
+
+.category {
+    vertical-align: top;
+    margin: 20px;
+    width: 400px;
+    height: 250px;
+}
+
+.article {
+    display: inline-block;
+    width: 50%;
+    margin: 5px;
+    text-align: left;
+    padding: 5px;
+}
+
+.la-div {
+    display: inline-block;
+    /*border: black solid 1px;*/
+    text-align: left;
+    width: 70%;
+}
