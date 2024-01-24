@@ -1,0 +1,7 @@
+#+title: Tasks for 个人网站
+#+author: Tom Jiao
+#+date: 2024-01-24
+
+- [ ] 整理归档
+- [ ] Intro to capacitors and differential equations
+- [ ] Verilog cache design 实现
